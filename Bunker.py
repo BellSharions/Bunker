@@ -10,6 +10,7 @@ time_of_life = random.randint(4, 36)
 def main():
 	print('\n1. Создать карточки\n\n2. Заменить здоровье\n\n3. Заменить фобию\n\n4. Заменить хобби\n\n5. Заменить Профессию')
 	print('\n6. Заменить черту характера\n\n7. Заменить багаж\n\n8. Заменить доп инфу\n\n9. Заменить биологическую характеристику')
+	print('\n10. Правила\n')
 	choice = int(input())
 	if (choice == 1):
 		print('Введите кол-во игроков:')
@@ -38,6 +39,8 @@ def main():
 		file.write(write_sex())
 		file.close()
 		print('\nDone')
+	elif (choice == 10):
+		print('https://vk.com/topic-196140718_41352139\n')
 
 class player:
 	def __init__(self, prof, hobbi, phobia, health, dop_info, psycho, spec_card, baggage):
