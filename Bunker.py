@@ -56,6 +56,7 @@ class player:
 def create_player(player, number, catastrophe, bunker):
 	file = open(str(number + 1) + '.txt', 'w')
 	file.write('Катастрофа: ' + catastrophe + '\n')
+	file.write(write_info())
 	file.write('Бункер:\tПлощадь ' + str(area) + 'кв.м\nВ бункере располагается: ' + str(bunker[0]) + ', ' + str(bunker[1]) + ', ' + str(bunker[2]) + '\n')
 	file.write('Время пребывания в бункере: ' + str(time_of_life) + ' месяцев\n\nХарактеристики:\n')
 	file.write(write_sex())
@@ -165,6 +166,11 @@ def write_health(health) -> str:
 	if (health != 'Идеально здоров'):
 		stat += ' ' + str(random.randint(0, 100)) + '%\n'
 	return stat
+
+def write_info() -> str:
+	out = 'Процент выжившего населения: ' + str(random.randint(5, 30)) + '%\n'
+	out += 'Процент разрушений в мире: ' + str(random.randint(30, 80)) + '%\n'
+	return out
 
 
 if __name__ == '__main__':
