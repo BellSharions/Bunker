@@ -118,7 +118,9 @@ def get_stat(stat) -> str:
 	cursor = conn.cursor()
 	
 	cursor.execute("SELECT " + stat[:-1] + " FROM " + stat)
-	temp_stat = str(cursor.fetchall()[random.randint(0, len(cursor.fetchall())) - 1])[2:-3]
+	index = random.randint(0, len(cursor.fetchall())) - 1
+	cursor.execute("SELECT " + stat[:-1] + " FROM " + stat)
+	temp_stat = str(cursor.fetchall()[index])[2:-3]
 
 	conn.close()
 	return temp_stat
