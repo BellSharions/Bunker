@@ -83,6 +83,8 @@ def Create_cards(amount_of_players):
 		health = get_stat('health')
 		hobbies = get_stat('hobbies')
 		psychosis = get_stat('psychosis')
+		phobies = get_stat('phobies')
+		baggage = get_stat('baggage')
 
 		spec_cards.append(get_stat('spec_cards'))
 		spec_cards.append(get_stat('spec_cards'))
@@ -90,9 +92,6 @@ def Create_cards(amount_of_players):
 			while (spec_cards[0] == spec_cards[1] or ('Карта' in spec_cards[0] and 'Карта' in spec_cards[1])):
 				spec_cards.pop()
 				spec_cards.append(get_stat('spec_cards'))
-
-		phobies = get_stat('phobies')
-		baggage = get_stat('baggage')
 
 		players.append(player(prof, hobbies, phobies, health, dop_info, psychosis, spec_cards, baggage))
 		create_player(players[i], i, catastrophe, bunker)
