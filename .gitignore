@@ -2,3 +2,5 @@
 *.pyw
 *.py
 .vs/
+Base.db
+__pycache__/
