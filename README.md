@@ -1,3 +1,4 @@
+[![Board Status](https://dev.azure.com/kbroom135/4d1219ed-92f4-43f9-8003-255cf258b86d/ecc88350-ecdf-40cc-ad41-242bcc797018/_apis/work/boardbadge/65c90c37-dd42-48e6-bf92-3b3ec1a9794d)](https://dev.azure.com/kbroom135/4d1219ed-92f4-43f9-8003-255cf258b86d/_boards/board/t/ecc88350-ecdf-40cc-ad41-242bcc797018/Microsoft.RequirementCategory)
 ---
 ## Адаптация настольной игры "Бункер" для игры с друзьями по сети.
 ---
