@@ -22,25 +22,25 @@ class player:
 
 def create_player(player, number, catastrophe, bunker):
 	file = open(str(number + 1) + '.txt', 'w')
-	file.write('👽Катастрофа:\n' + catastrophe + '\n')
+	file.write('Катастрофа:\n' + catastrophe + '\n')
 	file.write(write_info())
-	file.write('\n🏡Бункер:\n🏡Площадь ' + str(area) + ' кв.м\n🔧В бункере располагается: ' + str(bunker[0]) + ', ' + str(bunker[1]) + ', ' + str(bunker[2]) + '\n')
-	file.write('⌛Время пребывания в бункере: ' + str(time_of_life) + ' месяцев\n\nХарактеристики:\n')
+	file.write('\nБункер:\nПлощадь ' + str(area) + ' кв.м\nВ бункере располагается: ' + str(bunker[0]) + ', ' + str(bunker[1]) + ', ' + str(bunker[2]) + '\n')
+	file.write('Время пребывания в бункере: ' + str(time_of_life) + ' месяцев\n\nХарактеристики:\n')
 	file.write(write_sex())
 	file.write(write_body_type())
-	file.write('💼Профессия: ' + str(player.prof) + '\n')
-	file.write('🎣Хобби: ' + str(player.hobbi) + '\n')
-	file.write('👻Фобия: ' + str(player.phobia) + '\n')
+	file.write('Профессия: ' + str(player.prof) + '\n')
+	file.write('Хобби: ' + str(player.hobbi) + '\n')
+	file.write('Фобия: ' + str(player.phobia) + '\n')
 	file.write(write_health(player.health))
-	file.write('📝Доп. информация: ' + str(player.dop_info) + '\n')
-	file.write('👺Человеская черта: ' + str(player.psycho) + '\n')
-	file.write('📦Багаж: ' + str(player.baggage) + '\n')
-	file.write('\n🃏Карты действий:\n1)' + str(player.spec_card[0]) + '\n2)' + str(player.spec_card[1]) + '\n')
+	file.write('Доп. информация: ' + str(player.dop_info) + '\n')
+	file.write('Человеская черта: ' + str(player.psycho) + '\n')
+	file.write('Багаж: ' + str(player.baggage) + '\n')
+	file.write('\nКарты действий:\n1)' + str(player.spec_card[0]) + '\n2)' + str(player.spec_card[1]) + '\n')
 	file.close()
 
 def Create_cards(amount_of_players):
 	catastrophe = get_stat('catastrophes')
-	
+
 	bunker.append(get_stat('bunkers'))
 	bunker.append(check_bunker(get_stat('bunkers')))
 	bunker.append(check_bunker(get_stat('bunkers')))
@@ -79,7 +79,7 @@ def check_bunker(stat) -> str:
 def get_stat(stat) -> str:
 	conn = sqlite3.connect('Base.db')
 	cursor = conn.cursor()
-	
+
 	cursor.execute("SELECT " + stat[:-1] + " FROM " + stat)
 	index = rand.randint(0, len(cursor.fetchall())) - 1
 	cursor.execute("SELECT " + stat[:-1] + " FROM " + stat)

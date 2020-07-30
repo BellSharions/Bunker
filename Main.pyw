@@ -59,7 +59,7 @@ def main(base):
 
 		if event in ('Заменить доп инфу'):
 			change_stat('dop_info')
-			
+
 		if event in ('Заменить биологическую характеристику'):
 			file = open('stat.txt', 'w')
 			file.write(write_sex())
@@ -69,4 +69,4 @@ def main(base):
 if __name__ == '__main__':
 	if (not check_connetion()):
 		main(base = False)
-	main(base = True)
+	main(base = True) 
