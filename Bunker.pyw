@@ -22,20 +22,20 @@ class player:
 
 def create_player(player, number, catastrophe, bunker):
 	file = open(str(number + 1) + '.txt', 'w')
-	file.write('Катастрофа:\n' + catastrophe + '\n')
+	file.write('Катастрофа:\n{}\n'.format(catastrophe))
 	file.write(write_info())
-	file.write('\nБункер:\nПлощадь ' + str(area) + ' кв.м\nВ бункере располагается: ' + str(bunker[0]) + ', ' + str(bunker[1]) + ', ' + str(bunker[2]) + '\n')
-	file.write('Время пребывания в бункере: ' + str(time_of_life) + ' месяцев\n\nХарактеристики:\n')
+	file.write('\nБункер:\nПлощадь {} кв. м.\nВ бункере располагается: {}, {}, {}\n'.format(area, bunker[0], bunker[1], bunker[2]))
+	file.write('Время пребывания в бункере: {} месяцев\n\nХарактеристики:\n'.format(time_of_life))
 	file.write(write_sex())
 	file.write(write_body_type())
-	file.write('Профессия: ' + str(player.prof) + '\n')
-	file.write('Хобби: ' + str(player.hobbi) + '\n')
-	file.write('Фобия: ' + str(player.phobia) + '\n')
+	file.write('Профессия: {}\n'.format(player.prof))
+	file.write('Хобби: {}\n'.format(player.hobbi))
+	file.write('Фобия: {}\n'.format(player.phobia))
 	file.write(write_health(player.health))
-	file.write('Доп. информация: ' + str(player.dop_info) + '\n')
-	file.write('Человеская черта: ' + str(player.psycho) + '\n')
-	file.write('Багаж: ' + str(player.baggage) + '\n')
-	file.write('\nКарты действий:\n1)' + str(player.spec_card[0]) + '\n2)' + str(player.spec_card[1]) + '\n')
+	file.write('Доп. информация: {}\n'.format(player.dop_info))
+	file.write('Человеская черта: {}\n'.format(player.psycho))
+	file.write('Багаж: {}\n'.format(player.baggage))
+	file.write('Карты действий:\n1) {}\n2) {}\n'.format(player.spec_card[0], player.spec_card[1]))
 	file.close()
 
 def Create_cards(amount_of_players):
@@ -92,7 +92,7 @@ def change_stat(stat):
 	file = open(str(stat) + '.txt', 'w')
 	file.write(get_stat(stat))
 	file.close()
-	print('Создан файл: ' + stat + '.txt')
+	print('Создан файл: {}.txt'.format(stat))
 
 def write_sex() -> str:
 	stat = 'Пол и возраст: '
